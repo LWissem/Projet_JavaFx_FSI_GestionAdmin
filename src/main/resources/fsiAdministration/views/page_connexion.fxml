@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="380.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/22"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fsiAdministration.controllers.ConnexionController">
+   <children>
+      <VBox spacing="15.0" layoutX="10.0" layoutY="10.0" prefWidth="520.0">
+         <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+         </padding>
+         <children>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="CONNEXION" textFill="#024010" prefHeight="67.0" prefWidth="420.0" alignment="CENTER_LEFT">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/FSI_logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+
+            <Separator prefWidth="480.0" style="-fx-background-color: #024010;" />
+
+            <!-- Login Field -->
+            <VBox spacing="5.0">
+               <Label text="Identifiant" textFill="#024010">
+                  <font><Font size="15.0" /></font>
+               </Label>
+               <TextField fx:id="tfLogin" prefWidth="300.0" promptText="Entrez votre identifiant"
+                          style="-fx-background-radius: 5; -fx-border-radius: 5;" />
+               <Label fx:id="loginError" textFill="red" style="-fx-font-style: italic;" visible="false" />
+            </VBox>
+
+            <!-- Password Field -->
+            <VBox spacing="5.0">
+               <Label text="Mot de passe" textFill="#024010">
+                  <font><Font size="15.0" /></font>
+               </Label>
+               <PasswordField fx:id="tfMDP" prefWidth="300.0" promptText="Entrez votre mot de passe"
+                              style="-fx-background-radius: 5; -fx-border-radius: 5;" />
+               <Label fx:id="mdpError" textFill="red" style="-fx-font-style: italic;" visible="false" />
+            </VBox>
+
+            <Separator prefWidth="480.0" style="-fx-background-color: #024010;" />
+
+            <!-- Button -->
+            <StackPane alignment="CENTER">
+               <children>
+                  <Button fx:id="bConnexion" text="Connexion" onAction="#bConnexionClick"
+                          style="-fx-background-color: #024010; -fx-text-fill: white; -fx-background-radius: 20;"
+                          prefWidth="200.0" prefHeight="40.0">
+                     <font>
+                        <Font size="16.0"/>
+                     </font>
+                  </Button>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </children>
+</Pane>

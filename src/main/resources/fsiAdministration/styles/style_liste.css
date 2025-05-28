@@ -1,0 +1,22 @@
+.table-view {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-background-color: #ffffff;
+}
+
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #024010;
+}
+
+.table-view .column-header {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #c8e6c9;
+}

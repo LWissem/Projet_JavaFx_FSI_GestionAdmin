@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<Pane prefHeight="478.0" prefWidth="729.0"
+      xmlns="http://javafx.com/javafx/22"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fsiAdministration.controllers.ModifierCoursController"
+      stylesheets="@../styles/style.css">
+
+    <children>
+
+        <!-- NAVBAR -->
+        <VBox prefHeight="48.0" prefWidth="729.0" id="topNav">
+            <children>
+                <HBox spacing="5.0">
+                    <children>
+                        <ImageView fitHeight="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/FSI_logo.png" />
+                            </image>
+                        </ImageView>
+
+                        <Button text="Accueil" onAction="#bAccueilClick" />
+
+                        <MenuBar>
+                            <menus>
+                                <Menu text="Gestion étudiant">
+                                    <items>
+                                        <MenuItem fx:id="bListeEtud" text="Liste des étudiants" onAction="#bListEtudClick" />
+                                        <MenuItem fx:id="bAjouterEtud" text="Ajouter un étudiant" onAction="#bAjouterEtudClick" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+
+                        <MenuBar>
+                            <menus>
+                                <Menu text="Gestion section">
+                                    <items>
+                                        <MenuItem fx:id="bListeSection" text="Liste des sections" onAction="#bListeSectionClick" />
+                                        <MenuItem fx:id="bAjouterSection" text="Ajouter une section" onAction="#bAjouterSectionClick" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+
+                        <MenuBar>
+                            <menus>
+                                <Menu text="Gestion cours">
+                                    <items>
+                                        <MenuItem fx:id="bListeCours" text="Liste des cours" onAction="#bListeCoursClick" />
+                                        <MenuItem fx:id="bAjouterCours" text="Ajouter un cours" onAction="#bAjouterCoursClick" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button text="Quitter" onAction="#bQuitterClick" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- CONTENU PRINCIPAL -->
+        <VBox layoutY="54.0" spacing="20" prefWidth="729.0">
+            <padding>
+                <Insets top="20" right="40" bottom="10" left="40" />
+            </padding>
+
+            <children>
+                <Label text="Modifier un cours" textAlignment="CENTER" textFill="#2a4d32"
+                       alignment="CENTER" prefWidth="650.0" style="-fx-font-weight: bold;">
+                    <font>
+                        <Font name="System" size="26.0" />
+                    </font>
+                </Label>
+
+                <HBox fx:id="hblibelleCours" spacing="15">
+                    <children>
+                        <Label text="Libellé Cours :" textFill="#3e6b43" style="-fx-font-weight: bold;" prefWidth="160.0" />
+                        <TextField fx:id="tflibelleCours" prefWidth="400.0"
+                                   style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #a3c293; -fx-padding: 5 10;" />
+                    </children>
+                </HBox>
+
+                <HBox fx:id="hbdescCours" spacing="15">
+                    <children>
+                        <Label text="Description Cours :" textFill="#3e6b43" style="-fx-font-weight: bold;" prefWidth="160.0" />
+                        <TextField fx:id="tfdescCours" prefWidth="400.0"
+                                   style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #a3c293; -fx-padding: 5 10;" />
+                    </children>
+                </HBox>
+
+                <HBox fx:id="hbSectionCours" spacing="15">
+                    <children>
+                        <Label text="Section Cours :" textFill="#3e6b43" style="-fx-font-weight: bold;" prefWidth="160.0" />
+                        <ListView fx:id="lvSectionCours" prefHeight="150.0" prefWidth="300.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- BOUTONS D'ACTION -->
+        <HBox layoutY="370.0" spacing="30" alignment="CENTER">
+            <padding>
+                <Insets top="10" bottom="10" left="40" right="40" />
+            </padding>
+            <children>
+                <Button fx:id="bEnregistrer" text="ENREGISTRER" onAction="#bEnregistrerClick"
+                        prefHeight="35" prefWidth="180"
+                        style="-fx-background-color: #3e8e41; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;">
+                    <font>
+                        <Font name="System" size="16.0" />
+                    </font>
+                </Button>
+
+                <Button fx:id="bEffacer" text="EFFACER" onAction="#bEffacerClick"
+                        prefHeight="35" prefWidth="180"
+                        style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;">
+                    <font>
+                        <Font name="System" size="16.0" />
+                    </font>
+                </Button>
+
+                <Button fx:id="bRetour" text="RETOUR" onAction="#bRetourClick"
+                        prefHeight="35" prefWidth="180"
+                        style="-fx-background-color: #5bc0de; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;">
+                    <font>
+                        <Font name="System" size="16.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+
+    </children>
+</Pane>
