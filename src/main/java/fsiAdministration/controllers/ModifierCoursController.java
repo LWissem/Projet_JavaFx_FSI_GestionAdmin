@@ -1,0 +1,96 @@
+
+package fsiAdministration.controllers;
+
+import fsiAdministration.BO.Cours;
+import fsiAdministration.BO.Section;
+import fsiAdministration.DAO.CoursDAO;
+import fsiAdministration.DAO.SectionDAO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class ModifierCoursController extends MenuController implements Initializable {
+
+    @FXML private TextField tflibelleCours;
+    @FXML private TextField tfdescCours;
+    @FXML private ListView<Section> lvSectionCours;
+    @FXML private Button bRetour;
+    private Cours cours;
+
+    public void setCours(Cours cours) {
+        this.cours = cours;
+        tflibelleCours.setText(cours.getLibelleCours());
+        tfdescCours.setText(cours.getDescriptionCours());
+
+        for (Section section : lvSectionCours.getItems()) {
+            if (section.getIdSection() == cours.getIdSection()) {
+                lvSectionCours.getSelectionModel().select(section);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        SectionDAO sectionDAO = new SectionDAO();
+        List<Section> toutesLesSections = sectionDAO.findAll();
+        ObservableList<Section> sectionList = FXCollections.observableArrayList(toutesLesSections);
+        lvSectionCours.setItems(sectionList);
+    }
+
+    @FXML
+    public void bEnregistrerClick() {
+        String nom = tflibelleCours.getText();
+        String prenom = tfdescCours.getText();
+        Section sectionSelectionnee = lvSectionCours.getSelectionModel().getSelectedItem();
+
+        if (cours == null || nom.isBlank() || prenom.isBlank() || sectionSelectionnee == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Champs manquants");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez remplir tous les champs.");
+            alert.showAndWait();
+            return;
+        }
+        cours.setLibelleCours(nom);
+        cours.setDescriptionCours(prenom);
+        cours.setIdSection(sectionSelectionnee.getIdSection());
+
+
+
+        CoursDAO dao = new CoursDAO();
+        boolean success = dao.update(cours);
+
+        Alert alert = new Alert(success ? Alert.AlertType.CONFIRMATION : Alert.AlertType.ERROR);
+        alert.setTitle(success ? "Reussite" : "Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText(success ? "Modification reussie." : "Echec de la modification du cours.");
+        alert.showAndWait();
+
+        if (success) {
+            Stage stage = (Stage) bRetour.getScene().getWindow();
+            stage.close();
+        }
+    }
+
+    @FXML
+    public void bEffacerClick(ActionEvent event) {
+        tflibelleCours.clear();
+        tfdescCours.clear();
+        lvSectionCours.getSelectionModel().clearSelection();
+    }
+    @FXML
+    public void bRetourClick(ActionEvent event) {
+        Stage stage = (Stage) bRetour.getScene().getWindow();
+        stage.close();
+    }
+}
