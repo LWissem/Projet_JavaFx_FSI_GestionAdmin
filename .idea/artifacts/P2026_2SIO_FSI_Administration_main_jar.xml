@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="P2026_2SIO_FSI_Administration.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/P2026_2SIO_FSI_Administration_main_jar</output-path>
+    <root id="archive" name="P2026_2SIO_FSI_Administration.main.jar">
+      <element id="module-output" name="P2026_2SIO_FSI_Administration.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/24.0.1/4b10eb55326c5faae8b0fcaff99a0e8a09ee0624/javafx-base-24.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/24.0.1/182c98a223c2f3033e3a7dbacb65d039863f7cec/javafx-fxml-24.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/24.0.1/6748f643f79aa54922ada5c759f5a6d04d7a2ff4/javafx-base-24.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/24.0.1/adc9707040d23e968aeee461b0c9d43a8c70d015/javafx-controls-24.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.41.0/8be6df7f1e9bccb19f8f351b3651f0bac2f5e0c/checker-qual-3.41.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/24.0.1/d432e25ea9cd73fb28b89658e0cba8b55e2b5b9/javafx-graphics-24.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/24.0.1/2f4e3f0b616c31a4886fbd12f43bb8c2244e5e48/javafx-graphics-24.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.7.1/66098cc4f7dca6f7f5b4b847c5cc8699fc079e5b/postgresql-42.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/24.0.1/1a11fceb872b9d81234601a32b7bd0e9f9d40921/javafx-controls-24.0.1-win.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<Pane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fsiAdministration.controllers.AccueilController"
+      prefHeight="478.0" prefWidth="729.0"
+      stylesheets="@../styles/style.css"
+      style="-fx-border-color: red;">
+
+    <children>
+        <!-- Navbar -->
+        <VBox layoutX="-1.0" prefHeight="48.0" prefWidth="729.0" id="topNav" mouseTransparent="false">
+        <children>
+            <HBox spacing="5.0" mouseTransparent="false">
+            <children>
+                        <ImageView fitHeight="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/FSI_logo.png" />
+                            </image>
+                        </ImageView>
+
+                        <Button text="Accueil" onAction="#bAccueilClick" />
+
+                        <MenuBar>
+                            <menus>
+                                <Menu text="Gestion étudiant">
+                                    <items>
+                                        <MenuItem fx:id="bListeEtud" text="Liste des étudiants" onAction="#bListEtudClick" />
+                                        <MenuItem fx:id="bAjouterEtud" text="Ajouter un étudiant" onAction="#bAjouterEtudClick" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+
+                        <MenuBar>
+                            <menus>
+                                <Menu text="Gestion section">
+                                    <items>
+                                        <MenuItem fx:id="bListeSection" text="Liste des sections" onAction="#bListeSectionClick" />
+                                        <MenuItem fx:id="bAjouterSection" text="Ajouter une section" onAction="#bAjouterSectionClick" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+
+                        <MenuBar>
+                            <menus>
+                                <Menu text="Gestion cours">
+                                    <items>
+                                        <MenuItem fx:id="bListeCours" text="Liste des cours" onAction="#bListeCoursClick" />
+                                        <MenuItem fx:id="bAjouterCours" text="Ajouter un cours" onAction="#bAjouterCoursClick" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button text="Quitter" onAction="#bQuitterClick" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Partie principale -->
+        <HBox fx:id="mainSplit" layoutY="48.0" prefHeight="430.0" prefWidth="729.0" id="mainSplit" mouseTransparent="true">
+        <!-- Texte de bienvenue -->
+            <VBox fx:id="leftPane" prefWidth="500.0" id="leftPane" spacing="15.0" alignment="CENTER_LEFT">
+                <children>
+                    <Label fx:id="bvn" text="Bienvenue" textFill="#024010">
+                        <font>
+                            <Font name="Bell MT Bold" size="28.0" />
+                        </font>
+                    </Label>
+                    <Label text="dans l'application de gestion administratif FSI"
+                           textFill="#008000"
+                           wrapText="false"
+                           maxWidth="Infinity"
+                           HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Bell MT Bold" size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+
+            <!-- Logo -->
+            <VBox fx:id="rightPane" prefWidth="229.0" id="rightPane" alignment="CENTER">
+                <children>
+                    <ImageView fx:id="fsiLogo" fitWidth="200.0" preserveRatio="true" id="fsiLogo">
+                        <image>
+                            <Image url="@../images/FSI_logo.png" />
+                        </image>
+                    </ImageView>
+                </children>
+            </VBox>
+        </HBox>
+    </children>
+</Pane>

@@ -1,0 +1,101 @@
+/* Dégradé de fond global */
+.root {
+    -fx-background-color: linear-gradient(to right, #ffffff, #e4f8e8);
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+#topNav {
+    -fx-background-color: #e3fcef;
+    -fx-padding: 10 20 10 20;
+    -fx-border-color: #4C9E4A;
+    -fx-border-width: 0 0 2 0;
+}
+
+/* Boutons de navbar */
+#topNav Button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #024010;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-border-radius: 5;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+#topNav Button:hover {
+    -fx-background-color: #c0ebc8;
+    -fx-text-fill: #023a10;
+    -fx-background-radius: 5;
+}
+
+/* Menu */
+.menu-bar {
+    -fx-background-color: transparent;
+}
+.menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #024010;
+    -fx-font-size: 13px;
+}
+.menu:hover, .menu:showing {
+    -fx-background-color: #c0ebc8;
+    -fx-text-fill: #024010;
+}
+.menu-item {
+    -fx-background-color: white;
+    -fx-text-fill: #024010;
+    -fx-padding: 8 16 8 16;
+    -fx-font-size: 13px;
+}
+.menu-item:hover,
+.menu-item:focused,
+.menu-item:showing {
+    -fx-background-color: #c0ebc8;
+    -fx-text-fill: #024010;
+}
+.context-menu {
+    -fx-background-color: white;
+    -fx-border-color: #4C9E4A;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.2, 0, 2);
+}
+
+/* Zone texte */
+#leftPane {
+    -fx-background-color: white;
+    -fx-alignment: center;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 0);
+}
+
+
+/* Zone logo */
+#rightPane {
+    -fx-background-color: #e3fcef;
+    -fx-alignment: center;
+    -fx-padding: 40;
+    -fx-background-radius: 100 0 0 100;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 30, 0.3, -5, 0);
+}
+
+#fsiLogo {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0.5, 0, 0);
+}
+
+#welcomeText {
+    -fx-text-fill: #024010;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+    -fx-alignment: center;
+}
+
+#subText {
+    -fx-text-fill: #024010;
+    -fx-font-size: 18px;
+    -fx-alignment: center;
+}
+#mainSplit {
+    -fx-background-color: white; /* gris foncé, proche du fond du logo */
+    -fx-padding: 0;
+}
