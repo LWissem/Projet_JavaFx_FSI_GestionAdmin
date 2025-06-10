@@ -1,9 +1,17 @@
 plugins {
-    java
+    id("java")
+    id("application")
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
+
+    application {
+        mainClass.set("fsiAdministration.Main")
+    }
+
+
 
 val javafxVersion = "24.0.1"
 val platform = "win" 

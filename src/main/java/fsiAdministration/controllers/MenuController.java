@@ -16,7 +16,7 @@ import java.io.IOException;
 public class MenuController {
 
     @FXML
-    protected MenuItem bListeEtud, bAjouterEtud, bListeSection, bAjouterSection, bQuitter;
+    protected MenuItem bListeEtud, bAjouterEtud, bListeSection, bAjouterSection, bQuitter, bAjouterReferent;
 
     @FXML
     public void bQuitterClick(ActionEvent event) {
@@ -152,4 +152,23 @@ public class MenuController {
             e.printStackTrace();
         }
     }
+
+    public void bAjouterReferentClick(ActionEvent actionEvent) {
+        try {
+            Stage stageE = (Stage) ((MenuItem) actionEvent.getSource()).getParentPopup().getOwnerWindow();
+            stageE.close();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fsiAdministration/views/page_ajout_referent.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter un référent");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

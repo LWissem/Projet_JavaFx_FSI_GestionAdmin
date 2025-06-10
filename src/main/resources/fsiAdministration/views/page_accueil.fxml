@@ -43,6 +43,7 @@
                                     <items>
                                         <MenuItem fx:id="bListeSection" text="Liste des sections" onAction="#bListeSectionClick" />
                                         <MenuItem fx:id="bAjouterSection" text="Ajouter une section" onAction="#bAjouterSectionClick" />
+                                        <MenuItem fx:id="bAjouterReferent" text="Ajouter un referent" onAction="#bAjouterReferentClick" />
                                     </items>
                                 </Menu>
                             </menus>

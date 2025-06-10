@@ -23,6 +23,7 @@ import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -42,6 +43,7 @@ public class ListeEtudiantController extends MenuController implements Initializ
     @FXML
     private TableColumn<Etudiant, String> tcSection;
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -54,7 +56,7 @@ public class ListeEtudiantController extends MenuController implements Initializ
         tcNomEtud.setCellValueFactory(cellData -> cellData.getValue().nomEtudiantProperty());
         tcPrenomEtud.setCellValueFactory(cellData -> cellData.getValue().prenomEtudiantProperty());
         tcDateNaissance.setCellValueFactory(cellData ->
-                new SimpleStringProperty(cellData.getValue().getDateNaissance().toString()));
+                new SimpleStringProperty(cellData.getValue().getDateNaissance().format(formatter)));
         tcSection.setCellValueFactory(cellData -> {
             int idSection = cellData.getValue().getIdSection();
             String libelle = new SectionDAO().find(idSection).getLibelleSection();
