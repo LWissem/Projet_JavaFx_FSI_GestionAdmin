@@ -12,7 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+<<<<<<< HEAD
 import javafx.scene.Node;
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -21,13 +24,19 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+<<<<<<< HEAD
 import java.io.IOException;
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ListeEtudiantController extends MenuController implements Initializable {
+<<<<<<< HEAD
     // TableView et ses colonnes pour afficher les étudiants
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     @FXML
     private Button bRetour;
     @FXML
@@ -47,6 +56,7 @@ public class ListeEtudiantController extends MenuController implements Initializ
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+<<<<<<< HEAD
         // Récupération des étudiants depuis la base
         EtudiantDAO etudDAO = new EtudiantDAO();
         List<Etudiant> mesEtud = etudDAO.findAll();
@@ -55,22 +65,37 @@ public class ListeEtudiantController extends MenuController implements Initializ
         ObservableList<Etudiant> mesEtudOL = FXCollections.observableArrayList(mesEtud);
 
         // Lier chaque colonne à une propriété de l'objet Etudiant
+=======
+
+        EtudiantDAO etudDAO = new EtudiantDAO();
+        List<Etudiant> mesEtud = etudDAO.findAll();
+        ObservableList<Etudiant> mesEtudOL= FXCollections.observableArrayList(mesEtud);
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         tcNomEtud.setCellValueFactory(cellData -> cellData.getValue().nomEtudiantProperty());
         tcPrenomEtud.setCellValueFactory(cellData -> cellData.getValue().prenomEtudiantProperty());
         tcDateNaissance.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getDateNaissance().toString()));
+<<<<<<< HEAD
 
         // Afficher le libellé de la section à partir de l'idSection
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         tcSection.setCellValueFactory(cellData -> {
             int idSection = cellData.getValue().getIdSection();
             String libelle = new SectionDAO().find(idSection).getLibelleSection();
             return new SimpleStringProperty(libelle);
         });
 
+<<<<<<< HEAD
         // Remplir la table avec les données des étudiants
         tvEtudiants.setItems(mesEtudOL);
 
         // Création des boutons Modifier et Supprimer dans chaque ligne
+=======
+        tvEtudiants.setItems(mesEtudOL);
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         Callback<TableColumn<Etudiant, Void>, TableCell<Etudiant, Void>> cellFactory = param -> new TableCell<>() {
             private final Button btnModifier = new Button("Modifier");
             private final Button btnSupprimer = new Button("Supprimer");
@@ -81,15 +106,23 @@ public class ListeEtudiantController extends MenuController implements Initializ
 
                 btnModifier.setOnAction(event -> {
                     try {
+<<<<<<< HEAD
                         // Fermer la fenêtre actuelle
                         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         currentStage.close();
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 
                         // Charger le fichier FXML
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fsiAdministration/views/page_modifier_etudiant.fxml"));
                         Parent root = fxmlLoader.load();
 
+<<<<<<< HEAD
                         // Obtenir le contrôleur de la nouvelle fenêtre
+=======
+
+                        // Obtenir le contrôleur de la nouvelle fenetre
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
                         ModifierEtudiantController modifierEtudiantController = fxmlLoader.getController();
                         Etudiant etu = getTableView().getItems().get(getIndex());
                         modifierEtudiantController.setEtudiant(etu);
@@ -102,15 +135,26 @@ public class ListeEtudiantController extends MenuController implements Initializ
                         // Configurer la fenêtre en tant que modal
                         stage.initModality(Modality.APPLICATION_MODAL);
 
+<<<<<<< HEAD
                         // Afficher la nouvelle fenêtre
                         stage.show();
+=======
+                        // Afficher la fenêtre et attendre qu'elle se ferme
+                        stage.showAndWait();
+                        tvEtudiants.setItems(FXCollections.observableArrayList(new EtudiantDAO().findAll()));
+
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
                 btnSupprimer.setOnAction(event -> {
                     Etudiant etudiant = getTableView().getItems().get(getIndex());
                     Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -157,6 +201,7 @@ public class ListeEtudiantController extends MenuController implements Initializ
 
 
     }
+<<<<<<< HEAD
 
     @FXML
     public void bRetourClick(ActionEvent event) {
@@ -175,5 +220,11 @@ public class ListeEtudiantController extends MenuController implements Initializ
         } catch (IOException e) {
             e.printStackTrace();
         }
+=======
+    @FXML
+    public void bRetourClick(ActionEvent event) {
+        Stage stage = (Stage) bRetour.getScene().getWindow();
+        stage.close();
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     }
 }

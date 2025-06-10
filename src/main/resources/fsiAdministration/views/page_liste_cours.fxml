@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<<<<<<< HEAD
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
@@ -98,6 +99,61 @@
             </VBox>
 
 
+=======
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.HBox?>
+<Pane prefHeight="478.0" prefWidth="729.0"
+      xmlns="http://javafx.com/javafx/22"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fsiAdministration.controllers.ListeCoursController">
+    <children>
+        <VBox spacing="15.0" prefWidth="729.0">
+
+            <!-- MenuBar commun -->
+            <MenuBar>
+                <menus>
+                    <Menu text="Gestion étudiant">
+                        <items>
+                            <MenuItem fx:id="bListeEtud" onAction="#bListEtudClick" text="Liste des étudiants" />
+                            <MenuItem fx:id="bAjouterEtud" onAction="#bAjouterEtudClick" text="Ajouter un étudiant" />
+                        </items>
+                    </Menu>
+                    <Menu text="Gestion section">
+                        <items>
+                            <MenuItem fx:id="bListeSection" onAction="#bListeSectionClick" text="Liste des sections" />
+                            <MenuItem fx:id="bAjouterSection" onAction="#bAjouterSectionClick" text="Ajouter une section" />
+                        </items>
+                    </Menu>
+                    <Menu text="Gestion cours">
+                        <items>
+                            <MenuItem fx:id="bListeCours" onAction="#bListeCoursClick" text="Liste des cours" />
+                            <MenuItem fx:id="bAjouterCours" onAction="#bAjouterCoursClick" text="Ajouter un cours" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <TableView fx:id="tvCours" prefHeight="300.0" prefWidth="700.0">
+                <columns>
+                    <TableColumn fx:id="tcLibelleCours" text="Libellé du cours" prefWidth="100.0" />
+                    <TableColumn fx:id="tcDescriptionCours" text="Description" prefWidth="400.0" />
+                    <TableColumn fx:id="tcSection" text="Section" prefWidth="200.0" />
+                    <TableColumn fx:id="tcActions" prefWidth="150.0" text="Actions" />
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER">
+                <Button fx:id="bRetour" mnemonicParsing="false" onAction="#bRetourClick"
+                        prefHeight="30.0" prefWidth="200.0" text="RETOUR" textFill="#024010">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+            </HBox>
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         </VBox>
     </children>
 </Pane>

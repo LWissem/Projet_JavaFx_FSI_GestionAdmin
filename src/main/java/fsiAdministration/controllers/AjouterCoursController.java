@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -17,6 +18,12 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+=======
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
@@ -74,6 +81,7 @@ public class AjouterCoursController extends MenuController implements Initializa
 
     @FXML
     public void bRetourClick(ActionEvent event) {
+<<<<<<< HEAD
         try {
             // Charger la page d'accueil (remplace "Accueil.fxml" par le nom correct)
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fsiAdministration/views/page_liste_cours.fxml"));
@@ -89,5 +97,9 @@ public class AjouterCoursController extends MenuController implements Initializa
         } catch (IOException e) {
             e.printStackTrace();
         }
+=======
+        Stage stage = (Stage) bRetour.getScene().getWindow();
+        stage.close();
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     }
 }

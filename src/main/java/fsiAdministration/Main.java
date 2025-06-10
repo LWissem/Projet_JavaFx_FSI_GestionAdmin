@@ -7,4 +7,8 @@ public class Main {
 
         MainApplication.launch(MainApplication.class);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d

@@ -43,18 +43,25 @@ public class SectionDAO extends DAO<Section> {
             success = rowsDeleted > 0;
 
         } catch (SQLException e) {
+<<<<<<< HEAD
             // SQLState 23503 = violation clé étrangère dans PostgreSQL
             if ("23503".equals(e.getSQLState())) {
                 throw new RuntimeException("foreign_key_violation");
             } else {
                 e.printStackTrace();
             }
+=======
+            e.printStackTrace();
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         }
         return success;
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     @Override
     public boolean update(Section obj) {
         boolean success = false;

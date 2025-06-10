@@ -12,7 +12,10 @@
     import javafx.fxml.FXML;
     import javafx.fxml.FXMLLoader;
     import javafx.fxml.Initializable;
+<<<<<<< HEAD
     import javafx.scene.Node;
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     import javafx.scene.Parent;
     import javafx.scene.Scene;
     import javafx.scene.control.*;
@@ -21,7 +24,10 @@
     import javafx.stage.Stage;
     import javafx.util.Callback;
 
+<<<<<<< HEAD
     import java.io.IOException;
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     import java.net.URL;
     import java.util.List;
     import java.util.ResourceBundle;
@@ -69,6 +75,7 @@
                 btnModifier.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 btnSupprimer.setStyle("-fx-background-color: red; -fx-text-fill: white;");
 
+<<<<<<< HEAD
                     btnModifier.setOnAction(event -> {
                         try {
                             // Fermer la fenêtre actuelle
@@ -90,14 +97,45 @@
                             stage.setScene(new Scene(root));
                             stage.initModality(Modality.APPLICATION_MODAL);
                             stage.show();
+=======
+                btnModifier.setOnAction(event -> {
+                    try {
+
+                    // Charger le fichier FXML
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fsiAdministration/views/page_modifier_cours.fxml"));
+                    Parent root = fxmlLoader.load();
+
+
+                    // Obtenir le contrôleur de la nouvelle fenetre
+                    ModifierCoursController modifierCoursController = fxmlLoader.getController();
+                    Cours cours = getTableView().getItems().get(getIndex());
+                    modifierCoursController.setCours(cours);
+
+                    // Créer une nouvelle fenêtre (Stage)
+                    Stage stage = new Stage();
+                    stage.setTitle("Modifier un cours");
+                    stage.setScene(new Scene(root));
+
+                    // Configurer la fenêtre en tant que modal
+                    stage.initModality(Modality.APPLICATION_MODAL);
+
+                    // Afficher la fenêtre et attendre qu'elle se ferme
+                    stage.showAndWait();
+                    tvCours.setItems(FXCollections.observableArrayList(new CoursDAO().findAll()));
+
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     });
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
                     btnSupprimer.setOnAction(event -> {
                         Cours cours = getTableView().getItems().get(getIndex());
                         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -147,6 +185,7 @@
 
         @FXML
         public void bRetourClick(ActionEvent event) {
+<<<<<<< HEAD
             try {
                 // Charger la page d'accueil (remplace "Accueil.fxml" par le nom correct)
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fsiAdministration/views/page_accueil.fxml"));
@@ -162,5 +201,9 @@
             } catch (IOException e) {
                 e.printStackTrace();
             }
+=======
+            Stage stage = (Stage) bRetour.getScene().getWindow();
+            stage.close();
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         }
     }

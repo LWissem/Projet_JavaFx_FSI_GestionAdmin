@@ -5,7 +5,11 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
         <option name="gradleJvm" value="zulu-17" />
+=======
+        <option name="gradleJvm" value="zulu-22" />
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />

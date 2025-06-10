@@ -25,6 +25,11 @@ public class AccueilController extends MenuController implements Initializable {
     @FXML
     private Label bvn;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (Session.utilisateurConnecte !=null){

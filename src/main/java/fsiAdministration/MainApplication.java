@@ -13,6 +13,10 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
+<<<<<<< HEAD
+=======
+          //  Parent parent = FXMLLoader.load(getClass().getResource("/fsiAdministration/views/page_connexion.fxml"));
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
             Parent parent = FXMLLoader.load(getClass().getResource("/fsiAdministration/views/page_connexion.fxml"));
             // create a scene
             Scene scene = new Scene(parent);
@@ -26,4 +30,7 @@ public class MainApplication extends Application {
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d

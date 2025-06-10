@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 package fsiAdministration.controllers;
 
 import fsiAdministration.BO.Cours;
@@ -8,14 +12,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+=======
+import javafx.fxml.Initializable;
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+<<<<<<< HEAD
+=======
+import java.time.LocalDate;
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -66,10 +78,16 @@ public class ModifierCoursController extends MenuController implements Initializ
         cours.setDescriptionCours(prenom);
         cours.setIdSection(sectionSelectionnee.getIdSection());
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         CoursDAO dao = new CoursDAO();
         boolean success = dao.update(cours);
 
         Alert alert = new Alert(success ? Alert.AlertType.CONFIRMATION : Alert.AlertType.ERROR);
+<<<<<<< HEAD
         alert.setTitle(success ? "Réussite" : "Erreur");
         alert.setHeaderText(null);
         alert.setContentText(success ? "Modification réussie." : "Échec de la modification du cours.");
@@ -87,6 +105,16 @@ public class ModifierCoursController extends MenuController implements Initializ
             } catch (Exception e) {
                 e.printStackTrace();
             }
+=======
+        alert.setTitle(success ? "Reussite" : "Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText(success ? "Modification reussie." : "Echec de la modification du cours.");
+        alert.showAndWait();
+
+        if (success) {
+            Stage stage = (Stage) bRetour.getScene().getWindow();
+            stage.close();
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
         }
     }
 
@@ -96,6 +124,7 @@ public class ModifierCoursController extends MenuController implements Initializ
         tfdescCours.clear();
         lvSectionCours.getSelectionModel().clearSelection();
     }
+<<<<<<< HEAD
 
     @FXML
     public void bRetourClick(ActionEvent event) {
@@ -110,5 +139,11 @@ public class ModifierCoursController extends MenuController implements Initializ
         } catch (Exception e) {
             e.printStackTrace();
         }
+=======
+    @FXML
+    public void bRetourClick(ActionEvent event) {
+        Stage stage = (Stage) bRetour.getScene().getWindow();
+        stage.close();
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
     }
 }

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <Pane prefHeight="380.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/22"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="fsiAdministration.controllers.ConnexionController">
@@ -21,6 +22,15 @@
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
                   <Label text="CONNEXION" textFill="#024010" prefHeight="67.0" prefWidth="420.0" alignment="CENTER_LEFT">
+=======
+<Pane prefHeight="300.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fsiAdministration.controllers.ConnexionController">
+   <children>
+      <VBox spacing="15.0" layoutX="8.0" layoutY="10.0" prefWidth="520.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="CONNEXION" textFill="#024010" prefHeight="67.0" prefWidth="420.0" alignment="CENTER">
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
@@ -35,6 +45,7 @@
 
             <Separator prefWidth="480.0" style="-fx-background-color: #024010;" />
 
+<<<<<<< HEAD
             <!-- Login Field -->
             <VBox spacing="5.0">
                <Label text="Identifiant" textFill="#024010">
@@ -58,6 +69,38 @@
             <Separator prefWidth="480.0" style="-fx-background-color: #024010;" />
 
             <!-- Button -->
+=======
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+               <children>
+                  <Label text="Login :" textFill="#024010" prefWidth="100.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfLogin" prefWidth="300.0" promptText="Entrez votre identifiant" />
+               </children>
+               <HBox.margin>
+                  <Insets left="50.0"/>
+               </HBox.margin>
+            </HBox>
+
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+               <children>
+                  <Label text="Mot de passe :" textFill="#024010" prefWidth="100.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="tfMDP" prefWidth="300.0" promptText="Entrez votre mot de passe" />
+               </children>
+               <HBox.margin>
+                  <Insets left="50.0"/>
+               </HBox.margin>
+            </HBox>
+
+            <Separator prefWidth="480.0" style="-fx-background-color: #024010;" />
+
+>>>>>>> 65433509a2f9d659798cc33ba5b57cd2a9f6a87d
             <StackPane alignment="CENTER">
                <children>
                   <Button fx:id="bConnexion" text="Connexion" onAction="#bConnexionClick"
